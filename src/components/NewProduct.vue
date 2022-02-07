@@ -7,7 +7,7 @@
           class="img-responsive text-center mb-3"
           :src="
             product.selectedImage == null
-              ? '/src/assets/default.png'
+              ? './src/assets/default.png'
               : product.selectedImage
           "
         />
@@ -34,6 +34,7 @@
             <label>Ürün Adı</label>
             <input
               type="text"
+              v-model="product.title"
               class="form-control"
               placeholder="adını giriniz"
             />
@@ -43,6 +44,7 @@
               <label>Ürün Adeti</label>
               <input
                 type="text"
+                v-model="product.count"
                 class="form-control"
                 placeholder="adetini giriniz"
               />
@@ -51,12 +53,15 @@
               <label>Ürün Fiyatı</label>
               <input
                 type="text"
+                v-model="product.price"
                 class="form-control"
                 placeholder="fiyatını giriniz"
               />
             </div>
           </div>
-          <button class="btn btn-outline-info btn-block">Ekle!</button>
+          <button @click="addProduct" class="btn btn-outline-info btn-block">
+            Ekle!
+          </button>
         </div>
       </div>
     </div>
@@ -71,14 +76,19 @@ export default {
         title: null,
         count: null,
         price: null,
-      },
-      methods: {
-        onChange(e) {
-          const file = e.target.files[0];
-          this.product.selectedImage = URL.createObjectURL(file);
-        },
+        totalPrice: null,
       },
     };
+  },
+  methods: {
+    onChange(e) {
+      const file = e.target.files[0];
+      this.product.selectedImage = URL.createObjectURL(file);
+    },
+    addProduct() {
+      this.product.totalPrice = this.product.count * this.product.price;
+      console.log(this.product);
+    },
   },
 };
 </script>
