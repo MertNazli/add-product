@@ -43,5 +43,13 @@
   "main": "babel.config.js",
   "keywords": [],
   "author": "Mert Nazli | mertnazli01@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MertNazli/add-product.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MertNazli/add-product/issues"
+  },
+  "homepage": "https://github.com/MertNazli/add-product#readme"
 }
