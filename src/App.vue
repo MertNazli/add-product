@@ -21,18 +21,7 @@ import Products from "./components/Products.vue";
 export default {
   components: { NewProduct, Progress, Products },
   data() {
-    return {
-      productList: [],
-      product: {
-        selectedImage: null,
-      },
-    };
-  },
-  methods: {
-    onChange(e) {
-      const file = e.target.files[0];
-      this.product.selectedImage = URL.createObjectURL(file);
-    },
+    return {};
   },
 };
 </script>

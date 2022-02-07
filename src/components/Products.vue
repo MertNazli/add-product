@@ -1,6 +1,6 @@
 <template>
   <div class="row product-container">
-    <Product>
+    <Product v-for="product in productList" :key="product">
       <img
         class="card-img-top"
         src="/src/assets/default.png"
@@ -23,7 +23,9 @@ import Product from "./Product.vue";
 export default {
   component: { Product },
   data() {
-    return {};
+    return {
+      productList: [],
+    };
   },
 };
 </script>
